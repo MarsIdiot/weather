@@ -1,0 +1,3 @@
+<import src="/pages/public/template.wxml"/>
+<template is="wt-main" data="{{...wd,errmsg}}">
+</template>

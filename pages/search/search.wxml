@@ -1,0 +1,11 @@
+<view class="search">
+<!-- <input type="text" placeholder="请输入城市名"  class="inputBox" bindinput="getCity"/>
+
+<button class="buttonSearch" bindtap="getWheather">查询</button> -->
+
+
+<i-input value="{{value}}" bind:change="getCity" i-class="inputBox" type="text"  placeholder="请输入城市名" maxlength='10'/>
+
+<i-button type="primary"   shape="circle" size="large" i-class="buttonSearch" bind:click="getWheather">查询</i-button>
+
+</view>

@@ -1,0 +1,68 @@
+
+<template name="wt-main">
+  <!--如果status==ok，则说明有数据-->
+  <block  wx:if="{{status == 'ok'}}">
+    <!--滚动视图容器-->
+    <scroll-view class="outer" scroll-y>
+      <!--头部信息 城市，更新日期-->
+      <view class='base_info inner'>
+        <text>{{city}}</text>
+        <text>{{now}}</text>
+        <text>{{upTime}} 更新</text>
+      </view>
+
+      <!--天气信息 温度 天气情况(多云) -->
+      <view class='wt_info inner' >
+        <text class='temp'>{{temp}}℃</text>
+        <text class='desc'>{{desc}}</text>
+      </view>
+
+      <!--详细天气信息 空气质量-->
+      <view class='index inner'>
+        <text class='title'>空气质量：{{suggestion.air.brf}}</text>
+        <text class='indexDesc'>{{suggestion.air.txt}}</text>
+      </view>
+
+      <!--详细天气信息 舒适指数-->
+      <view class='index inner'>
+        <text class='title'>舒适指数：{{suggestion.comf.brf}}</text>
+        <text class='indexDesc'>{{suggestion.comf.txt}}</text>
+      </view>
+      <!--详细天气信息 洗车指数-->
+      <view class='index inner'>
+        <text class='title'>洗车指数：{{suggestion.cw.brf}}</text>
+        <text class='indexDesc'>{{suggestion.cw.txt}}</text>
+      </view>
+      <!--详细天气信息 穿衣指数-->
+      <view class='index inner'>
+        <text class='title'>穿衣指数：{{suggestion.drsg.brf}}</text>
+        <text class='indexDesc'>{{suggestion.drsg.txt}}</text>
+      </view>
+      <!--详细天气信息 感冒指数-->
+      <view class='index inner'>
+        <text class='title'>感冒指数：{{suggestion.flu.brf}}</text>
+        <text class='indexDesc'>{{suggestion.flu.txt}}</text>
+      </view>
+      <!--详细天气信息 运动指数-->
+      <view class='index inner'>
+        <text class='title'>运动指数：{{suggestion.sport.brf}}</text>
+        <text class='indexDesc'>{{suggestion.sport.txt}}</text>
+      </view>
+      <!--详细天气信息 旅游指数-->
+      <view class='index inner'>
+        <text class='title'>旅游指数：{{suggestion.trav.brf}}</text>
+        <text class='indexDesc'>{{suggestion.trav.txt}}</text>
+      </view>
+      <!--详细天气信息 紫外线指数-->
+      <view class='index inner'>
+        <text class='title'>紫外线指数：{{suggestion.uv.brf}}</text>
+        <text class='indexDesc'>{{suggestion.uv.txt}}</text>
+      </view>
+       
+    </scroll-view>
+  </block>
+  <block wx:else>
+    {{errmsg}}
+  </block>  
+
+</template>
